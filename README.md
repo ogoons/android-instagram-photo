@@ -1,2 +1,2 @@
 # AndroidInstagramPhoto
-Android instagram photo wrapper
+Android instagram photo api wrapper
