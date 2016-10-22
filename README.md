@@ -9,6 +9,6 @@ Android instagram photo api wrapper
 Square 사의 Retrofit2로 구성된 소스 코드입니다.
 아래 코드를 build.gradle 에 추가해주세요.
 
-<b>build.gradle (app)</b>
+<b>build.gradle (app)</b><br>
 compile 'com.squareup.retrofit2:retrofit:2.1.0' <br>
-compile 'com.squareup.retrofit2:converter-gson:2.1.0'
+compile 'com.squareup.retrofit2:converter-gson:2.1.0'<br>
