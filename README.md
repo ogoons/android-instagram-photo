@@ -14,8 +14,8 @@ Square 사의 Retrofit2로 구성된 소스 코드입니다.<br>
 compile 'com.squareup.retrofit2:retrofit:2.1.0' <br>
 compile 'com.squareup.retrofit2:converter-gson:2.1.0'<br>
 <br>
-******************************************************<br>
+======================================================<br>
 AndroidInstagramPhoto wrapper<br>
 Copyright 2016 ogoons.<br>
 이 소스코드는 BSD 라이센스를 따릅니다.<br>
-******************************************************<br>
+======================================================<br>
