@@ -15,7 +15,7 @@ build.gradle (app)
     compile 'com.squareup.retrofit2:retrofit:2.1.0'
     compile 'com.squareup.retrofit2:converter-gson:2.1.0'
 
-# Licence
+# License
 Copyright 2016 ogoons (<ogoons@hanmail.net>)
 
 Licensed under the Apache License, Version 2.0 (the "License");
