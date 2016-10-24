@@ -1,5 +1,5 @@
 # AndroidInstagramPhoto
-Android instagram photo api wrapper
+### Android instagram photo api wrapper
 
 안드로이드 인스타그램 사진 가져오기 기능을 구현한 Container class 입니다.
 인스타그램 API는 순수 REST API로만 구현되어 있어 안드로이드에서 구현할 때는 까다로운데요.
@@ -16,7 +16,7 @@ build.gradle (app)
     compile 'com.squareup.retrofit2:converter-gson:2.1.0'
 
 # Licence
-Copyright 2016 Oh, Su-cheol <ogoons@hanmail.net>
+Copyright 2016 ogoons (<ogoons@hanmail.net>)
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
