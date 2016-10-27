@@ -1,6 +1,6 @@
-package com.zzixx.instagram;
+package com.ogoons.instagram;
 
-import com.zzixx.instagram.model.InstagramMedia;
+import com.ogoons.instagram.model.InstagramMedia;
 
 import retrofit2.Call;
 import retrofit2.http.Field;
