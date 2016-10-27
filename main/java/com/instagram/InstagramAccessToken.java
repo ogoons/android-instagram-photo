@@ -1,4 +1,4 @@
-package com.zzixx.instagram;
+package com.ogoons.instagram;
 
 /**
  * Created by ogoons on 2016-09-22.
