@@ -1,12 +1,12 @@
-package com.zzixx.instagram;
+package com.ogoons.instagram;
 
 import android.content.Context;
 import android.os.AsyncTask;
 import android.os.Build;
 import android.text.TextUtils;
 
-import com.zzixx.instagram.model.InstagramMedia;
-import com.zzixx.instagram.model.InstagramUser;
+import com.ogoons.instagram.model.InstagramMedia;
+import com.ogoons.instagram.model.InstagramUser;
 
 import java.io.IOException;
 import java.util.ArrayList;
