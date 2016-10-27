@@ -1,4 +1,4 @@
-package com.zzixx.instagram;
+package com.ogoons.instagram;
 
 import android.content.Context;
 import android.content.SharedPreferences;
@@ -9,8 +9,7 @@ import android.webkit.CookieManager;
 import android.webkit.CookieSyncManager;
 import android.webkit.ValueCallback;
 
-import com.zzixx.ZXApplication;
-import com.zzixx.instagram.model.InstagramUser;
+import com.ogoons.instagram.model.InstagramUser;
 
 /**
  * Created by ogoons on 2016-09-21.
@@ -59,14 +58,7 @@ public class InstagramSession {
                     Log.d(ZXApplication.LOG_TAG, "removeAllCookies > onReceiveValue");
                 }
             });
-
         }
-
-        /*
-        CookieSyncManager.createInstance(mContext);
-        CookieManager cookieManager = CookieManager.getInstance();
-        cookieManager.removeAllCookie();
-        */
     }
 
     public InstagramUser getUser() {
@@ -85,5 +77,4 @@ public class InstagramSession {
     public boolean isActive() {
         return mSharedPref.contains(ACCESS_TOKEN);
     }
-
 }
