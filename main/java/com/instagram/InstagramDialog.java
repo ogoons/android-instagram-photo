@@ -1,4 +1,4 @@
-package com.zzixx.instagram;
+package com.ogoons.instagram;
 
 import android.app.Dialog;
 import android.content.Context;
@@ -13,7 +13,7 @@ import android.webkit.WebViewClient;
 import android.widget.FrameLayout;
 import android.widget.ProgressBar;
 
-import com.zzixx.R;
+import com.ogoons.R;
 
 /**
  * Created by ogoons on 2016-09-20.
@@ -57,23 +57,6 @@ public class InstagramDialog extends Dialog {
     }
 
     private void setupDialog() {
-        /*
-        DisplayMetrics metrics = new DisplayMetrics();
-        getWindow().getWindowManager().getDefaultDisplay().getMetrics(metrics);
-
-        final int width = metrics.widthPixels;
-        final int height = metrics.heightPixels;
-
-        double[] dimensions = new double[2];
-        if (width < height) {
-            dimensions[0] = 0.87 * width;
-            dimensions[1] = 0.82 * height;
-        } else {
-            dimensions[0] = 0.75 * width;
-            dimensions[1] = 0.75 * height;
-        }
-        */
-
         View view = (View) getLayoutInflater().inflate(R.layout.dialog_instagram, null);
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(view, new FrameLayout.LayoutParams(FrameLayout.LayoutParams.MATCH_PARENT, FrameLayout.LayoutParams.MATCH_PARENT));
