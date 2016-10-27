@@ -1,4 +1,4 @@
-package com.zzixx.instagram.model;
+package com.ogoons.instagram.model;
 
 /**
  * Created by ogoons on 2016-09-22.
