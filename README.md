@@ -1,5 +1,6 @@
 # Android Instagram Photo
-### Android instagram photo api wrapper
+
+Android instagram photo api wrapper
 
 ## Summary
 
