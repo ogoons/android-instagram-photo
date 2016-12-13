@@ -7,6 +7,8 @@
 현재 recent photo API와 관련해서 권한 이슈로 사진을 20개 이상 가져오지 못할 텐데
 해당 기능이 구현되는 앱을 심사받고 권한을 획득하시면 됩니다.
 
+## Dependencies
+
 Square 사의 Retrofit2로 구성된 소스 코드입니다.
 아래 코드를 build.gradle 에 추가해주세요.
 
@@ -15,7 +17,7 @@ build.gradle (app)
     compile 'com.squareup.retrofit2:retrofit:2.1.0'
     compile 'com.squareup.retrofit2:converter-gson:2.1.0'
 
-# License
+## License
 
     Copyright 2016 Oh, Su-cheol <ogoons@hanmail.net>
 
