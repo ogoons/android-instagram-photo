@@ -97,31 +97,44 @@ public class InstagramManager implements InstagramDialog.InstagramDialogListener
         return mSession.getUser();
     }
 
+    /**
+     * Request the instagram media format (Asynchronous)
+     * @param listener
+     */
     public void requestMedia(final InstagramMediaListener listener) {
         if (null == mSession.getUser())
             return;
+
+        listener.onStart();
 
         String token = mSession.getUser().accessToken;
         mInstagramRequest.requestMedia(token, -1).enqueue(new Callback<InstagramMedia>() {
             @Override
             public void onResponse(Call<InstagramMedia> call, Response<InstagramMedia> response) {
+                listener.onFinish();
+
                 InstagramMedia medias = response.body();
                 listener.onSuccess(medias);
             }
 
             @Override
             public void onFailure(Call<InstagramMedia> call, Throwable t) {
+                listener.onFinish();
                 listener.onFailure();
             }
         });
     }
 
-    public void getMedia(final InstagramImageListener imageListener) {
+    /**
+     * Get the images (Asynchronous)
+     * @param imageListener
+     */
+    public void getImages(final InstagramImageListener imageListener) {
         mImageListener = imageListener;
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.HONEYCOMB)
-            new GetMediaAsyncTask().executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR, mSession.getUser().accessToken);
+            new GetImagesAsyncTask().executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR, mSession.getUser().accessToken);
         else
-            new GetMediaAsyncTask().execute(mSession.getUser().accessToken);
+            new GetImagesAsyncTask().execute(mSession.getUser().accessToken);
     }
 
     public void requestAccessToken(String code) {
@@ -174,7 +187,13 @@ public class InstagramManager implements InstagramDialog.InstagramDialogListener
         }
     }
 
-    private class GetMediaAsyncTask extends AsyncTask<String, Void, ArrayList<InstagramImage>> {
+    private class GetImagesAsyncTask extends AsyncTask<String, Void, ArrayList<InstagramImage>> {
+        @Override
+        protected void onPreExecute() {
+            super.onPreExecute();
+            mImageListener.onStart();
+        }
+
         @Override
         protected ArrayList<InstagramImage> doInBackground(String... params) {
             ArrayList<InstagramImage> instagramImages = new ArrayList<InstagramImage>();
@@ -212,6 +231,7 @@ public class InstagramManager implements InstagramDialog.InstagramDialogListener
         @Override
         protected void onPostExecute(ArrayList<InstagramImage> instagramImages) {
             super.onPostExecute(instagramImages);
+            mImageListener.onFinish();
 
             if (instagramImages.isEmpty()) {
                 mImageListener.onFailure();
@@ -228,11 +248,15 @@ public class InstagramManager implements InstagramDialog.InstagramDialogListener
     }
 
     public interface InstagramImageListener {
+        void onStart();
+        void onFinish();
         void onSuccess(ArrayList<InstagramImage> images);
         void onFailure();
     }
 
     public interface InstagramMediaListener {
+        void onStart();
+        void onFinish();
         void onSuccess(InstagramMedia medias);
         void onFailure();
     }
